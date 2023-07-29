@@ -2,11 +2,11 @@ const express = require("express");
 
 const cmrs = require("./routes/cmrs")
 
-
 const app = express();
+const pool = require("./model/db");
 app.use(express.json());
 
-const port = 5000;
+
 
 app.get('/', (req, res)=>{
     res.send("Medical Records: ")
@@ -14,5 +14,7 @@ app.get('/', (req, res)=>{
 
 app.use('/api/v1/cmrs', cmrs)
 
-app.listen(port);
+app.listen(5000,()=>{
+    console.log('server has started');
+});
 

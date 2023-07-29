@@ -1,18 +1,19 @@
+require("dotenv").config();
 const express = require("express");
 const pool = require('./model/db');
-const cmrs = require("./routes/cmrs");
+// const cmrs = require("./routes/cmrs");
 const cors = require('cors');
 
+
+
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-const port = 3000;
+const port = process.env.PORT;
 
-app.get('/', (req, res)=>{
-    res.send("Medical Records: ")
-})
-
+// create record
 
 app.post("/signup",async (req,res) => {
     try
@@ -31,7 +32,9 @@ app.post("/signup",async (req,res) => {
 
 });
 
-app.get("/signup", async(req, res)=>{
+// display all records
+
+app.get("/signup/display", async(req, res)=>{
     try {
        const data = await pool.query("SELECT * FROM doctor");
         res.json(data.rows);
@@ -39,71 +42,27 @@ app.get("/signup", async(req, res)=>{
         console.error(err.message);
             
     }
-})
+});
 
-// app.post('/signup/doc',async(req,res)=>{
-//     try {
-//         const {registration_id} = req.body;
-//         const regid = await pool.query("INSERT INTO patients(registration_id) VALUES ($1) RETURNING *",[registration_id]);
-//         res.json(regid);
-//         console.log("Request posted");
-//     } catch (err) {
-//         console.error(err.message);
-//     }
-// });
+// display specific doc info as selected id
 
-// app.post('/signup/doc',async(req,res)=>{
-//     try {
-//         const {name} = req.body;
-//         const docname = await pool.query("INSERT INTO patients(name) VALUES ($1) RETURNING *",[name]);
-//         res.json(docname);
-//         console.log("Request posted");
-//     } catch (err) {
-//         console.error(err.message);
-//     }
-// });
-// app.post('/signup/doc',async(req,res)=>{
-//     try {
-//         const {hospital} = req.body;
-//         const hosp = await pool.query("INSERT INTO patients(hospital) VALUES ($1) RETURNING *",[hospital]);
-//         res.json(hosp);
-//         console.log("Request posted");
-//     } catch (err) {
-//         console.error(err.message);
-//     }
-// });
-// get all ids
-// app.get('/entry', async(req,res)=>{
-//     try {
-//         const allIds = await pool.query("SELECT * FROM doctor");
-//         res.json(allIds.rows);
-//     } catch (err) {
-//         console.error(err.message);;
-        
-//     }
-// });
+app.get('/signup/:id', async(req, res)=>{
+    console.log(req.params.id)
+    try {
+        const results = await pool.query(`select * from doctor where doctor_id = ${req.params.id}`);
+        console.log(results.rows[0]);
+        res.status(200).json({
+            status: "success",
+            data: {
+                doctor: results.rows[0],
+            },
+        });
+    } catch (err) {
+        console.log(err)
+    }
+});
 
-// app.get('/entry', async(req,res)=>{
-//     try {
-//         const allnames = await pool.query("SELECT name FROM patients");
-//         res.json(allnames.rows);
-//     } catch (err) {
-//         console.error(err.message);;
-        
-//     }
-// });
-// get an id
-
-// app.get('/entry/:id', async(req, res)=>{
-//     try {
-//         console.log(req.params);
-//     } catch (err) {
-//         console.error(err.message)
-//     }
-// });
-
-
-// app.use('/api/v1/cmrs', cmrs)
-
-app.listen(port, console.log("Hello"));
+app.listen(port, ()=>{
+    console.log(`server is up`);
+});
 

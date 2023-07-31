@@ -1,0 +1,65 @@
+.login-child {
+    position: absolute;
+    top: 131px;
+    left: 412px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 451px;
+    height: 563px;
+  }
+  .login-item {
+    position: absolute;
+    top: 246px;
+    left: 491px;
+    background-color: #39b49a;
+    width: 298px;
+    height: 77px;
+  }
+  .patient1 {
+    color: #fff;
+  }
+  .patient {
+    position: absolute;
+    top: 269px;
+    left: 524px;
+    display: inline-block;
+    width: 228px;
+    height: 40px;
+  }
+  .login-inner {
+    position: absolute;
+    top: 465px;
+    left: 491px;
+    background-color: #39b49a;
+    width: 294px;
+    height: 77px;
+  }
+  .doctor,
+  .or {
+    position: absolute;
+    top: 481px;
+    left: 501px;
+    display: inline-block;
+    width: 242px;
+    height: 55px;
+  }
+  .or {
+    top: 374px;
+    left: 543px;
+    color: #428bca;
+    width: 118px;
+    height: 42px;
+  }
+  .login {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 832px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 32px;
+    color: #000;
+    font-family: Inter;
+  }
+  

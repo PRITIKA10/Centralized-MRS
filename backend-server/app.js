@@ -75,7 +75,7 @@ app.post('/patientinfo',async (req,res)=>{
             weight,
             past_hospitalization
           } = req.body;
-        const newPatient = await pool.query("INSERT INTO entry (name, phone_number, aadhar_number, address, dob, blood_group, height, weight, past_hospitalization) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",[name,
+        const newPatient = await pool.query("INSERT INTO patients (name, phone_number, aadhar_number, address, dob, blood_group, height, weight, past_hospitalization) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",[name,
             phone_number,
             aadhar_number,
             address,

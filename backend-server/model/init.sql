@@ -24,7 +24,7 @@ CREATE TABLE "entry" (
   "entry_id" BIGSERIAL PRIMARY KEY NOT NULL,
   "patient_id" integer,
   "doctor_id" integer,
-  "created_at" timestamp,
+  "created_at" date,
   "prescription" varchar,
   "symptoms" varchar,
   "diagnosis_report" varchar,

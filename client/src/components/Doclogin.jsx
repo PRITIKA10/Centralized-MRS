@@ -10,6 +10,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 
 function Doclogin() {
@@ -34,7 +35,13 @@ function Doclogin() {
           <div className='d-flex flex-row justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
           </div>
+          <Link to="/receipt">
           <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn>
+          </Link>
+{/*           
+          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn> */}
+          
+        
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>

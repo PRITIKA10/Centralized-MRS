@@ -26,6 +26,7 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 function PatientLogin() {
   return (
@@ -41,7 +42,10 @@ function PatientLogin() {
           <div className='d-flex flex-row justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
           </div>
+          
           <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn>
+         
+          
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>

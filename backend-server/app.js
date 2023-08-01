@@ -62,6 +62,38 @@ app.get('/signup/:id', async(req, res)=>{
     }
 });
 
+app.post('/patientinfo',async (req,res)=>{
+    try {
+        const {
+            name,
+            phone_number,
+            aadhar_number,
+            address,
+            dob,
+            blood_group,
+            height,
+            weight,
+            past_hospitalization
+          } = req.body;
+        const newPatient = await pool.query("INSERT INTO entry (name, phone_number, aadhar_number, address, dob, blood_group, height, weight, past_hospitalization) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",[name,
+            phone_number,
+            aadhar_number,
+            address,
+            dob,
+            blood_group,
+            height,
+            weight,
+            past_hospitalization]);
+
+        
+        res.json(newPatient.rows[0]);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(400).json({err});
+    }
+})
+
 // create entry and and insert it into record
 app.post('/makeEntry',async (req,res)=>{
     try {

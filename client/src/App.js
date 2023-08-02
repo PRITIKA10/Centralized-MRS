@@ -4,13 +4,15 @@ import Navbar from './components/Navbar';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Login from './components/Login';
-import SignUp from './components/SignUp';
+import SignUp from './components/SignUP';
 import PatientLogin from './components/PatientLogin';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Doclogin from './components/Doclogin';
 import { Carousel } from 'react-responsive-carousel';
 import Desktop23 from './components/Desktop23';
+import Receipt from './components/Receipt';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -49,15 +51,18 @@ function App() {
             <Route exact path='/patient' element={<PatientLogin />} />
             <Route exact path='/doctor' element={<Doclogin />} />
             <Route exact path='/signup' element={<SignUp />} />
+            <Route exact path='/receipt' element={<Receipt/>}/>
 
 
 
           </Routes>
           
-           {/* <Receipt/> */}
+           
          
 
-        </div>
+        </div> 
+        <Footer/>
+        
       
     </div>
   );

@@ -1,0 +1,23 @@
+.editable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .editable-table th,
+  .editable-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .editable-table th {
+    background-color: #39B49A;
+    font-weight: bold;
+  }
+  
+  .editable-table input {
+    width: 100%;
+    border: none;
+    padding: 5px;
+  }

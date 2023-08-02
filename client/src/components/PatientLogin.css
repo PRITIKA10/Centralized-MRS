@@ -1,0 +1,90 @@
+.patient-login-child {
+    position: absolute;
+    top: 163px;
+    left: 408px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 447px;
+    height: 476px;
+  }
+  .password {
+    position: absolute;
+    top: 439px;
+    left: 530px;
+    display: inline-block;
+    width: 325px;
+    height: 35px;
+  }
+  .patient-login-item {
+    position: absolute;
+    top: 542px;
+    left: 469px;
+    background-color: #39b49a;
+    width: 340px;
+    height: 73px;
+  }
+  .enter-otp {
+    position: absolute;
+    top: 554px;
+    left: 555px;
+    font-size: 36px;
+    color: #fff;
+    display: inline-block;
+    width: 307px;
+    height: 49px;
+  }
+  .patient-login-inner,
+  .rectangle-div {
+    position: absolute;
+    top: 291px;
+    left: 433px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+    width: 398px;
+    height: 68px;
+  }
+  .rectangle-div {
+    top: 417px;
+    height: 67px;
+  }
+  .enter-password,
+  .enter-your-aadhar,
+  .patient-login1 {
+    position: absolute;
+    top: 308px;
+    left: 471px;
+    color: #a3a194;
+    display: inline-block;
+    width: 338px;
+    height: 39px;
+  }
+  .enter-password,
+  .patient-login1 {
+    top: 434px;
+    left: 530px;
+    color: #aaa;
+    width: 332px;
+    height: 34px;
+  }
+  .patient-login1 {
+    top: 196px;
+    left: 475px;
+    font-size: 48px;
+    color: #1d86df;
+    width: 313px;
+    height: 63px;
+  }
+  .patient-login {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 832px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 24px;
+    color: #000;
+    font-family: Inter;
+  }
+  

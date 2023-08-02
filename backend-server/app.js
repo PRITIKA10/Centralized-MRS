@@ -5,13 +5,22 @@ const pool = require('./model/db');
 const cors = require('cors');
 
 
-
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 const port = process.env.PORT;
+
+// Login patient
+app.post('/login',(req,res)=>{
+
+    const aadhar_number = req.body.aadhar_number;
+    //const patient = 
+
+})
+
+
 
 // create doctor
 
@@ -63,7 +72,7 @@ app.get('/signup/:id', async(req, res)=>{
 });
 
 // create entry and and insert it into record
-app.post('/makeEntry',async (req,res)=>{
+app.post('/Entry',async (req,res)=>{
     try {
         const {
             patient_id,
@@ -104,7 +113,13 @@ app.post('/makeEntry',async (req,res)=>{
     }
 })
 // read entry
-
+app.get('Entry',(req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+})
 
 app.listen(port, ()=>{
     console.log(`server is up`);

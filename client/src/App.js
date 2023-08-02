@@ -12,7 +12,7 @@ import Doclogin from './components/Doclogin';
 import { Carousel } from 'react-responsive-carousel';
 import Desktop23 from './components/Desktop23';
 import Receipt from './components/Receipt';
-
+import Footer from './components/Footer';
 
 
 function App() {
@@ -61,6 +61,7 @@ function App() {
          
 
         </div> 
+        <Footer/>
         
       
     </div>

@@ -28,15 +28,17 @@ function Doclogin() {
                 <MDBDropdownItem link>Something else here</MDBDropdownItem>
             </MDBDropdownMenu>
           </MDBDropdown>
-          <MDBInput wrapperClass='mb-4' label='Enter Aadhar Number' size='lg' id='form1' type='number'/>
+          <MDBInput wrapperClass='mb-4' label='Registration Id' size='lg' id='form1' type='text'/>
+          <MDBInput wrapperClass='mb-4' label='Patient Aadhar Number' size='lg' id='form1' type='number'/>
+          <MDBInput wrapperClass='mb-4' label='Patient Name' size='lg' id='form1' type='text'/>
           {/* <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' id='form2' type='email'/> */}
-          <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/>
+          {/* <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/> */}
           {/* <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg' id='form4' type='password'/> */}
-          <div className='d-flex flex-row justify-content-center mb-4'>
+          {/* <div className='d-flex flex-row justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
-          </div>
+          </div> */}
           <Link to="/receipt">
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn>
+          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Verify Biometric</MDBBtn>
           </Link>
 {/*           
           <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn> */}

@@ -192,3 +192,5 @@ export default function Footer() {
     </MDBFooter>
   );
 }
+
+// export default Footer;

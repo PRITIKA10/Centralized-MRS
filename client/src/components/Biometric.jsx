@@ -6,10 +6,10 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  // MDBCheckbox
+  MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-// import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
 
 
@@ -19,7 +19,7 @@ function Doclogin() {
       <div className='mask gradient-custom-3'></div>
       <MDBCard className='m-5' style={{maxWidth: '600px'}}>
         <MDBCardBody className='px-5'>
-          <h2 className="text-uppercase text-center mb-5">Doctor Login</h2>
+          <h2 className="text-uppercase text-center mb-5">Patient Biometric</h2>
           {/* <MDBDropdown>
             <MDBDropdownToggle size="lg" className='test'>Dropdown button</MDBDropdownToggle>
              <MDBDropdownMenu>
@@ -28,17 +28,17 @@ function Doclogin() {
                 <MDBDropdownItem link>Something else here</MDBDropdownItem>
             </MDBDropdownMenu>
           </MDBDropdown> */}
-          <MDBInput wrapperClass='mb-4' label='Registration Id' size='lg' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form1' type='number'/>
-          {/* <MDBInput wrapperClass='mb-4' label='Patient Name' size='lg' id='form1' type='text'/> */}
+          {/* <MDBInput wrapperClass='mb-4' label='Registration Id' size='lg' id='form1' type='text'/> */}
+          <MDBInput wrapperClass='mb-4' label='Patient Aadhar Number' size='lg' id='form1' type='number'/>
+          <MDBInput wrapperClass='mb-4' label='Patient Name' size='lg' id='form1' type='text'/>
           {/* <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' id='form2' type='email'/> */}
           {/* <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/> */}
           {/* <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg' id='form4' type='password'/> */}
           {/* <div className='d-flex flex-row justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
           </div> */}
-          <Link to="/biometric">
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn>
+          <Link to="/receipt">
+          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Verify Biometric</MDBBtn>
           </Link>
 {/*           
           <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn> */}

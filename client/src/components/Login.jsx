@@ -1,25 +1,3 @@
-// import React from "react";
-// import "./Login.css";
-// const Login = () => {
-//   return (
-//     <div className="login">
-//       <div className="login-child" />
-//       <div className="login-item" />
-//       <button className="patient">
-//         <span>{`       `}</span>
-//         <span className="patient1">Patient</span>
-//       </button>
-//       <div className="login-inner" />
-//       <button className="doctor">
-//         <span>{`         `}</span>
-//         <span className="patient1">Doctor</span>
-//       </button>
-//       <div className="or"> OR</div>
-//     </div>
-//   );
-// };
-
-// export default Login;
 import React from 'react';
 import {
   MDBBtn,

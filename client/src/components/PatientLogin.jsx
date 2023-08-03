@@ -6,6 +6,7 @@ import {
   MDBCardBody,
   MDBInput,
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 function PatientLogin() {
   const [aadharNumber, setAadharNumber] = useState('');
@@ -85,17 +86,20 @@ function PatientLogin() {
                 value={otpReceived}
                 onChange={(e) => setOtpReceived(e.target.value)}
               />
-              <MDBBtn
+              {/* <MDBBtn
                 className='mb-4 w-100 gradient-custom-4'
                 size='lg'
                 onClick={handleVerifyOTP}
-              >
-                Verify OTP
-              </MDBBtn>
+              > */}
+                <Link to="/patientreceipt">
+          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg' onClick={handleVerifyOTP}>Verify OTP</MDBBtn>
+          </Link>
+              {/* </MDBBtn> */}
             </React.Fragment>
           )}
 
           {otpVerified && <p>OTP Verified! Redirect to next page...</p>}
+          
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>

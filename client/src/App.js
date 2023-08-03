@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Login from './components/Login';
-import SignUp from './components/SignUP';
+// import SignUp from './components/SignUP';
 import PatientLogin from './components/PatientLogin';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';

@@ -32,9 +32,9 @@ export default function Navbar() {
         <Link to="/login">
         <button className="custom-button" type="submit">Login</button>
         </Link>
-        <Link to="/signup">
+        {/* <Link to="/signup">
         <button className="custom-button" type="submit">Sign Up</button>
-        </Link>
+        </Link> */}
         
       </form>
     </div>

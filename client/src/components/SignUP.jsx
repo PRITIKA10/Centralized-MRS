@@ -9,7 +9,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function SignUp() {
+function SignUP() {
   return (
     <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' >
       <div className='mask gradient-custom-3'></div>
@@ -28,5 +28,5 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUP;
 // style={{backgroundImage: 'url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)'}}

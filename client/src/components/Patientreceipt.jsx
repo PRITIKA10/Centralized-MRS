@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PatientInfo from './PatientInfo';
 import { Link } from 'react-router-dom';
 import './receipt.css'; // Import your CSS file
 
-const Receipt = () => {
+const Patientreceipt = () => {
   const initialTableData = [
     { attribute: 'Blood Group', value: '' },
     { attribute: 'Height', value: '' },
@@ -17,33 +17,32 @@ const Receipt = () => {
   ];
 
   const [tableData, setTableData] = useState(initialTableData);
-  const [isEditable, setIsEditable] = useState(true); // Initial state is editable
+  const [isEditable, setIsEditable] = useState(false); // Always set to false for readable format
 
   // Helper function to update the value in the tableData state
-  const updateCellValue = (index, value) => {
+//   const updateCellValue = (index, value) => {
+//     setTableData((prevTableData) => {
+//       const updatedTableData = [...prevTableData];
+//       updatedTableData[index].value = value;
+//       return updatedTableData;
+//     });
+//   };
+
+const appendCellValue = (value) => {
     setTableData((prevTableData) => {
       const updatedTableData = [...prevTableData];
-      updatedTableData[index].value = value;
+      updatedTableData.push({ value }); // Append a new cell with the provided value
       return updatedTableData;
     });
   };
 
-  // Function to toggle between editable and readable formats
-  const toggleEditable = () => {
-    setIsEditable((prevIsEditable) => !prevIsEditable);
-  };
 
-  // Function to handle saving the changes (for demonstration purposes, it just logs the data)
-  const handleSave = () => {
-    console.log('Data saved:', tableData);
-    setIsEditable(false); // Make the text boxes read-only after saving
-  };
 
   // Function to handle logout (for demonstration purposes, it just resets the table data and editable state)
-  // const handleLogout = () => {
-  //   setTableData(initialTableData);
-  //   setIsEditable(true);
-  // };
+  const handleLogout = () => {
+    setTableData(initialTableData);
+    setIsEditable(false);
+  };
 
   return (
     <div>
@@ -61,22 +60,9 @@ const Receipt = () => {
               <td>{row.attribute}</td>
               <td>
                 {row.attribute === 'Diagnosis Report' ? (
-                  isEditable ? (
-                    <input
-                      type="file"
-                      onChange={(e) => updateCellValue(index, e.target.files[0])}
-                    />
-                  ) : (
-                    <span>{row.value && row.value.name}</span>
-                  )
+                  <span>{row.value && row.value.name}</span>
                 ) : (
-                  <input
-                    type="text"
-                    value={row.value}
-                    onChange={(e) => updateCellValue(index, e.target.value)}
-                    placeholder={`Enter ${row.attribute}`}
-                    readOnly={!isEditable}
-                  />
+                  <span>{row.value}</span>
                 )}
               </td>
             </tr>
@@ -84,19 +70,13 @@ const Receipt = () => {
         </tbody>
       </table>
       <div>
-        {isEditable ? (
-          <button onClick={handleSave}>Save</button>
-        ) : (
-          <button onClick={toggleEditable}>Edit</button>
-        )}
-        {/* <button onClick={handleLogout}>Logout</button> */}
-        <Link to="/biometric">
+      <Link to="/patient">
         <button className="custom-button" type="submit">Logout</button>
         </Link>
-
+        {/* <button onClick={handleLogout}>Logout</button> */}
       </div>
     </div>
   );
 };
 
-export default Receipt;
+export default Patientreceipt;

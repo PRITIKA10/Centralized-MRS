@@ -2,7 +2,9 @@
   color: #f4b63f;
 }
 .platinum{
+  width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   position: relative;
   margin: 30px;

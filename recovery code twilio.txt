@@ -1,0 +1,31 @@
+twilio
+
+account SID
+AC4f6cda12909ddd206819a91256d7b941
+
+auth Token
+bbfce04cc1899be53cb1a0e06760f878
+
+Twilio phone number
++18595876358
+
+recovery code 
+JjZ6FE-dn4k9nNm0xWKmn5nVum22UDY3d9iA0azj
+
+node.js basic code
+
+const accountSid = 'AC4f6cda12909ddd206819a91256d7b941';
+const authToken = 'bbfce04cc1899be53cb1a0e06760f878';
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+    .create({
+                from: '+18595876358',
+        to: '+917058595785'
+    })
+    .then(message => console.log(message.sid))
+    .done();
+
+
+twilio help
+https://youtu.be/SHt3IdcpA6Y

@@ -159,14 +159,17 @@ app.post('/receipt',async (req,res)=>{
             allergies,
             surgery_details]);
 
-        
+
+        // const {blood_group
+        // } = req.body;
+        // const newEntry = await pool.query("Insert Into entry(blood_group) VALUES($1) returning *", [blood_group])
         res.json(newEntry.rows);
 
     
         const recordInsertQuery = "INSERT INTO record (entry_id)VALUES ($1)";
 
-        const recordInsertValues = [entryId];
-        await pool.query(recordInsertQuery, recordInsertValues);
+        // const recordInsertValues = [entryId];
+        // await pool.query(recordInsertQuery, recordInsertValues);
 
         res.status(201).json({ message: 'Entry and Record inserted successfully.' });
         

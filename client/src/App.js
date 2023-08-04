@@ -14,6 +14,7 @@ import Doclogin from './components/Doclogin';
 import Receipt from './components/Receipt';
 import Patientreceipt from './components/Patientreceipt';
 import Footer from './components/Footer';
+// import PatientForm from "./components/PatientForm";
 import{useState} from 'react';
 import{useEffect} from 'react';
 import './App.css';

@@ -1,4 +1,8 @@
 /* Footer.css */
 .custom-footer {
-    background-color: black; /* Set the desired background color here */
+    background-color: black;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+     /* Set the desired background color here */
 }
+  

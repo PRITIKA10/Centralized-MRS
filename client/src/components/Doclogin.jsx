@@ -9,7 +9,7 @@ import {
   // MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-// import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
 
 
@@ -27,7 +27,7 @@ function Doclogin() {
                 <MDBDropdownItem link>Another action</MDBDropdownItem>
                 <MDBDropdownItem link>Something else here</MDBDropdownItem>
             </MDBDropdownMenu>
-          </MDBDropdown> */}
+          </MDBDropdown>
           <MDBInput wrapperClass='mb-4' label='Registration Id' size='lg' id='form1' type='text'/>
           <MDBInput wrapperClass='mb-4' label='Phone Number' size='lg' id='form1' type='number'/>
           {/* <MDBInput wrapperClass='mb-4' label='Patient Name' size='lg' id='form1' type='text'/> */}

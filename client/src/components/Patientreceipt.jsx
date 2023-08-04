@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PatientInfo from './PatientInfo';
+import { Link } from 'react-router-dom';
 import './receipt.css'; // Import your CSS file
 
 const Patientreceipt = () => {
@@ -19,13 +20,23 @@ const Patientreceipt = () => {
   const [isEditable, setIsEditable] = useState(false); // Always set to false for readable format
 
   // Helper function to update the value in the tableData state
-  const updateCellValue = (index, value) => {
+//   const updateCellValue = (index, value) => {
+//     setTableData((prevTableData) => {
+//       const updatedTableData = [...prevTableData];
+//       updatedTableData[index].value = value;
+//       return updatedTableData;
+//     });
+//   };
+
+const appendCellValue = (value) => {
     setTableData((prevTableData) => {
       const updatedTableData = [...prevTableData];
-      updatedTableData[index].value = value;
+      updatedTableData.push({ value }); // Append a new cell with the provided value
       return updatedTableData;
     });
   };
+
+
 
   // Function to handle logout (for demonstration purposes, it just resets the table data and editable state)
   const handleLogout = () => {
@@ -59,7 +70,10 @@ const Patientreceipt = () => {
         </tbody>
       </table>
       <div>
-        <button onClick={handleLogout}>Logout</button>
+      <Link to="/patient">
+        <button className="custom-button" type="submit">Logout</button>
+        </Link>
+        {/* <button onClick={handleLogout}>Logout</button> */}
       </div>
     </div>
   );

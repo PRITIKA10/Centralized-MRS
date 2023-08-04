@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PatientInfo from './PatientInfo';
+import { Link } from 'react-router-dom';
 import './receipt.css'; // Import your CSS file
 
 const Receipt = () => {
@@ -39,10 +40,10 @@ const Receipt = () => {
   };
 
   // Function to handle logout (for demonstration purposes, it just resets the table data and editable state)
-  const handleLogout = () => {
-    setTableData(initialTableData);
-    setIsEditable(true);
-  };
+  // const handleLogout = () => {
+  //   setTableData(initialTableData);
+  //   setIsEditable(true);
+  // };
 
   return (
     <div>
@@ -88,7 +89,11 @@ const Receipt = () => {
         ) : (
           <button onClick={toggleEditable}>Edit</button>
         )}
-        <button onClick={handleLogout}>Logout</button>
+        {/* <button onClick={handleLogout}>Logout</button> */}
+        <Link to="/biometric">
+        <button className="custom-button" type="submit">Logout</button>
+        </Link>
+
       </div>
     </div>
   );

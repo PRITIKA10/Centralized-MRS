@@ -1,57 +1,21 @@
 require("dotenv").config();
 const express = require("express");
 const pool = require('./model/db');
-// const cmrs = require("./routes/cmrs");
 const cors = require('cors');
 
-
 const app = express();
+// const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
+// const otpMap = new Map();
 
 app.use(cors());
 app.use(express.json());
 
 const port = process.env.PORT;
 
-// Login patient
-app.post('/login',(req,res)=>{
 
-    const aadhar_number = req.body.aadhar_number;
-    //const patient = 
+const patientRoutes = require('./routes/patientRoutes');
 
-})
-
-
-
-// create doctor
-
-app.post("/signup",async (req,res) => {
-    try
-    {
-        const {name} = req.body;
-        const {registration_id} = req.body;
-        const {hospital} = req.body;
-        const newpost = await pool.query("INSERT INTO doctor (name, registration_id, hospital) VALUES ($1,$2,$3) RETURNING *",[name, registration_id, hospital]);
-        res.json(newpost.rows[0]);
-    }
-    catch(err)
-    {
-        console.error(err.message);
-        res.status(400).json({err});
-    }
-
-});
-
-// display doctor details
-
-app.get("/signup/display", async(req, res)=>{
-    try {
-       const data = await pool.query("SELECT * FROM doctor");
-        res.json(data.rows);
-    } catch (err) {
-        console.error(err.message);
-            
-    }
-});
+app.use('/patient',patientRoutes);
 
 // display specific doc info as selected id
 
@@ -144,14 +108,14 @@ app.post('/Entry',async (req,res)=>{
         res.status(400).json({err});
     }
 })
-// read entry
-app.get('Entry',(req,res)=>{
-    try {
+// // read entry
+// app.get('Entry',(req,res)=>{
+//     try {
         
-    } catch (error) {
+//     } catch (error) {
         
-    }
-})
+//     }
+// })
 
 app.listen(port, ()=>{
     console.log(`server is up`);

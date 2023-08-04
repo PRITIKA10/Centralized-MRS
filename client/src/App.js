@@ -19,6 +19,9 @@ import{useState} from 'react';
 import{useEffect} from 'react';
 import './App.css';
 import Biometric from './components/Biometric';
+import OtpVerification from './components/OtpVerification';
+import DocOtp from './components/DocOtp';
+
 // import CmrsContext from './context_apis/CmrsContext';
 // import axios from 'axios';
 function App() {
@@ -74,6 +77,8 @@ function App() {
             <Route exact path='/receipt' element={<Receipt/>}/>
             <Route exact path='/patientreceipt' element={<Patientreceipt/>}/>
             <Route exact path='/biometric' element={<Biometric/>}/>
+            <Route exact path='/otpverification' element={<OtpVerification/>}/>
+            <Route exact path='/docotp' element={<DocOtp/>}/>
           </Routes>
 
         </div> 

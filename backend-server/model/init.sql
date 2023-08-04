@@ -14,10 +14,6 @@ CREATE TABLE "patients" (
   "aadhar_number" BIGINT,
   "address" varchar(255),
   "dob" timestamp,
-  "blood_group" varchar(255),
-  "height" integer,
-  "weight" integer,
-  "past_hospitalization" varchar(255)
 );
 
 CREATE TABLE "entry" (
@@ -43,6 +39,24 @@ CREATE TABLE "record" (
   constraint patient_id FOREIGN KEY(patient_id) REFERENCES patients(id),
   constraint doctor_id FOREIGN KEY(doctor_id) REFERENCES doctor(doctor_id),
   constraint entry_id FOREIGN KEY(entry_id) REFERENCES entry(entry_id)
+);
+
+CREATE TABLE "doctor_otp" (
+  "id" BIGSERIAL PRIMARY KEY NOT NULL,
+  "doctor_id" INTEGER NOT NULL,
+  "otp" VARCHAR(6) NOT NULL,
+  "expiration_time" TIMESTAMP NOT NULL,
+  "created_at" TIMESTAMP DEFAULT NOW(),
+  CONSTRAINT fk_doctor_id FOREIGN KEY ("doctor_id") REFERENCES "doctor" ("doctor_id") ON DELETE CASCADE
+);
+
+CREATE TABLE "patient_otp" (
+  "id" BIGSERIAL PRIMARY KEY NOT NULL,
+  "patient_id" INTEGER NOT NULL,
+  "otp" VARCHAR(6) NOT NULL,
+  "expiration_time" TIMESTAMP NOT NULL,
+  "created_at" TIMESTAMP DEFAULT NOW(),
+  CONSTRAINT fk_patient_id FOREIGN KEY ("patient_id") REFERENCES "patients" ("id") ON DELETE CASCADE
 );
 
 alter table patients drop blood_group;

@@ -5,33 +5,42 @@ const twilio = require('twilio');
 const otpGenerator = require('otp-generator');
 const otpMap = new Map();
 
-const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
+
+const TWILIO_ACCOUNT_SID = 'ACbaebfd5309cc45640cb6aff8a2fa0d99';
+const TWILIO_AUTH_TOKEN = 'ffffca3b7399e187e4f5e7a7d5457aad';
+const TWILIO_PHONE_NUMBER = '++18595876879';
+
+const twilioClient = twilio(TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN);
 // Request - OTP
 async function requestOTP(req, res) {
     const { aadharNumber, mobileNumber } = req.body;
   
     // Check if the Aadhar number and phone number exist in the database
+    
     try {
     const query = 'SELECT * FROM patients WHERE aadhar_number = $1 AND phone_number = $2';
     const values = [aadharNumber, mobileNumber];
     const patientData = await pool.query(query, values);
+    if (!patientData) {
+      return res.status(404).json({ error: 'Patient not found' });
+    }
     } catch (error) {
         console.error('Error fetching patient data from the database:', error);
     }
     
-    if (!patientData) {
-      return res.status(404).json({ error: 'Patient not found' });
-    }
+    // if (!patientData) {
+    //   return res.status(404).json({ error: 'Patient not found' });
+    // }
   
     const otp = otpGenerator.generate(4, { digits: true, upperCase: false, specialChars: false }); // Generate OTP
-    otpMap.set(phoneNumber, otp);
+    otpMap.set(mobileNumber, otp);
     // ** Store otp in databasen
     // Send OTP to the user's phone number using Twilio
     twilioClient.messages
       .create({
         body: `Your OTP for verification is: ${otp}`,
-        from: process.env.TWILIO_PHONE_NUMBER,
-        to: phoneNumber,
+        from: TWILIO_PHONE_NUMBER,
+        to: mobileNumber,
       })
       .then(() => {
         res.json({ message: 'OTP sent successfully' });

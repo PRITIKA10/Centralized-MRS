@@ -4,9 +4,6 @@ const pool = require('./model/db');
 const cors = require('cors');
 
 const app = express();
-// const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
-// const otpMap = new Map();
-
 app.use(cors());
 app.use(express.json());
 

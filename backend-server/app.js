@@ -3,9 +3,9 @@ const express = require("express");
 const pool = require('./model/db');
 const cors = require('cors');
 
-
-
 const app = express();
+// const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
+// const otpMap = new Map();
 
 app.use(cors());
 app.use(express.json());
@@ -14,37 +14,10 @@ app.use(express.json());
 
 const port = process.env.PORT;
 
-// create doctor
 
-// app.post("/signup",async (req,res) => {
-//     try
-//     {
-//         const {name} = req.body;
-//         const {registration_id} = req.body;
-//         const {hospital} = req.body;
-//         const newpost = await pool.query("INSERT INTO doctor (name, registration_id, hospital) VALUES ($1,$2,$3) RETURNING *",[name, registration_id, hospital]);
-//         res.json(newpost.rows[0]);
-//     }
-//     catch(err)
-//     {
-//         console.error(err.message);
-//         res.status(400).json({err});
-//     }
+const patientRoutes = require('./routes/patientRoutes');
 
-// });
-
-// // display doctor details
-
-// app.get("/signup/display", async(req, res)=>{
-//     try {
-//        const data = await pool.query("SELECT * FROM doctor");
-//         res.json(data.rows);    
-//     } catch (err) {
-//         console.error(err.message);
-//         res.send("There was an error")
-//     }
-//     res.json([]);
-// });
+app.use('/patient',patientRoutes);
 
 // display specific doc info as selected id
 
@@ -97,6 +70,7 @@ const port = process.env.PORT;
 // })
 
 // create entry and and insert it into record
+// app.post('/Entry',async (req,res)=>{
 
 app.get('/doctor', async(req, res)=>{
     try {
@@ -114,6 +88,7 @@ app.get('/doctor', async(req, res)=>{
     }
     
 });
+
 
 
 app.get('/biometric', async(req, res)=>{
@@ -180,25 +155,6 @@ app.post('/receipt',async (req,res)=>{
 });
 
 
-app.get('/receipt',async (req,res)=>{
-    try {
-        const result = await pool.query(`select * from entry`);
-        const result1 = await pool.query(`select * from patients`)
-        console.log(result.rows);
-        console.log(result1.rows);
-        res.status(200).json({
-            status: "success",
-            data: {
-                patients: result1.rows,
-                entry: result.rows,
-            },
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({ error: "Internal Server Error" });
-    }
-    // res.json([]);
-});
 
 //show patients
 // app.get('/patient', async(req, res)=>{

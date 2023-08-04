@@ -1,0 +1,9 @@
+// const express = require('express');
+// const authRouter = express.Router();
+// //const User = require("../model/db");
+// const jwt = require("jsonwebtoken");
+// const accountSid = "AC4557630eed5e315558895dfd4ce6a7b3";
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const verifySid = "VA191d610c967c943059e22c5641d60ef6";
+// //const client = require("twilio")(accountSid, authToken);
+// const otpGenerator = require('otp-generator');

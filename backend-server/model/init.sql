@@ -1,4 +1,4 @@
-CREATE DATABASE mrs
+CREATE DATABASE crms
 
 CREATE TABLE "doctor" (
   "doctor_id" BIGSERIAL PRIMARY KEY NOT NULL,
@@ -44,3 +44,13 @@ CREATE TABLE "record" (
   constraint doctor_id FOREIGN KEY(doctor_id) REFERENCES doctor(doctor_id),
   constraint entry_id FOREIGN KEY(entry_id) REFERENCES entry(entry_id)
 );
+
+alter table patients drop blood_group;
+alter table patients drop height;
+alter table patients drop weight;
+alter table patients drop past_hospitalization;
+
+alter table entry add column blood_group varchar(10);
+alter table entry add column height float;
+alter table entry add column weight float;
+alter table entry add column past_hospitalization varchar(255);

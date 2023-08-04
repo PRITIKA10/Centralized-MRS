@@ -100,12 +100,30 @@ const port = process.env.PORT;
 
 app.get('/doctor', async(req, res)=>{
     try {
-        const result2 = await pool.query(`select doctor_id from doctor`)
+        const result2 = await pool.query(`select id from doctor`)
     console.log(result2.rows);
     res.status(200).json({
         status: "success",
         data: {
             doctor: result2.rows,
+        },
+    })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+    
+});
+
+
+app.get('/biometric', async(req, res)=>{
+    try {
+        const result3 = await pool.query(`select id from patients`)
+    console.log(result3.rows);
+    res.status(200).json({
+        status: "success",
+        data: {
+            doctor: result3.rows,
         },
     })
     } catch (err) {
@@ -129,7 +147,7 @@ app.post('/receipt',async (req,res)=>{
             allergies,
             surgery_details,
           } = req.body;
-        const newEntry = await pool.query("INSERT INTO entry (created_at, prescription, symptoms, diagnosis_report, height, weight, blood_group, past_hospitalizatio, allergies, surgery_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
+        const newEntry = await pool.query("INSERT INTO entry (created_at, prescription, symptoms, diagnosis_report, height, weight, blood_group, past_hospitalization, allergies, surgery_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
            [created_at,
             prescription,
             symptoms,

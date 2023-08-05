@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       {/* <h1 className="text-3xl font-bold mt-8">Welcome to the Home Page</h1>
       <p className="text-lg mt-4">This is the home page content.</p> */}
-      {/* <Slider/> */}
+      <Slider/>
       {/* <Desktop23/> */}
       <About/>
       <Contact/>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Receipt = () => {
   const initialTableData = [
-    // { attribute: 'Blood Group', value: '' },
+    { attribute: 'Blood Group', value: '' },
     { attribute: 'Height', value: '' },
     { attribute: 'Weight', value: '' },
     { attribute: 'Allergies', value: '' },

@@ -15,3 +15,6 @@ Not only will the patient be given verification privilege, but the registerd doc
 This way, we can ensure that both the parties are verified and consent has been given to access the details.
 
 
+# API's Used in the project
+1. Postman
+2. 

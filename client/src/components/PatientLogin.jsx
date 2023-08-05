@@ -159,7 +159,7 @@
 
 // export default PatientLogin;
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axiosConfig';
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBInput } from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
 function PatientLogin() {
@@ -174,7 +174,7 @@ function PatientLogin() {
     // For demonstration purposes, we directly redirect to the OTP verification page
     //navigate('/otpverification');
     try {
-      const response = await axios.post('/patient/patient-login', { aadharNumber, phoneNumber });
+      const response = await api.post('/patient/patient-login', { aadharNumber, phoneNumber });
       if (response.data.message === 'OTP sent successfully') {
         navigate('/otpverification');
       } else {

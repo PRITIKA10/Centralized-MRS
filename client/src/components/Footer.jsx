@@ -40,7 +40,7 @@ export default function Footer() {
           </MDBBtn>
         </section>
 
-        <section className=''>
+        {/* <section className=''>
           <form action=''>
             <MDBRow className='d-flex justify-content-center'>
               <MDBCol size="auto">
@@ -60,17 +60,15 @@ export default function Footer() {
               </MDBCol>
             </MDBRow>
           </form>
-        </section>
+        </section> */}
 
         <section className='mb-4'>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum repellat quaerat
-            voluptatibus placeat nam, commodi optio pariatur est quia magnam eum harum corrupti dicta, aliquam
-            sequi voluptate quas.
+          Harness the power of data to usher in a new era of healthcare in India. Our unified medical records system bridges gaps and streamlines information sharing, ensuring seamless coordination among providers for improved diagnoses, treatments, and patient outcomes. Join us in revolutionizing how healthcare is delivered and experienced.
           </p>
         </section>
 
-        <section className=''>
+        {/* <section className=''>
           <MDBRow>
             <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
               <h5 className='text-uppercase'>Links</h5>
@@ -180,13 +178,13 @@ export default function Footer() {
               </ul>
             </MDBCol>
           </MDBRow>
-        </section>
+        </section> */}
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(27,27,27)' }}>
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+          CMRS.com
         </a>
       </div>
     </MDBFooter>

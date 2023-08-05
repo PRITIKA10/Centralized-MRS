@@ -61,7 +61,7 @@ function App() {
         <input type='text' onChange={(e)=> setEntries(e.target.value)} value={entries}></input>
       </form> */}
         <Navbar/>
-        <div className='container'>
+        <div>
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/about' element={<About />} />

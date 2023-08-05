@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import PatientInfo from './PatientInfo';
 import './receipt.css'; // Import your CSS file
+import { Link } from 'react-router-dom';
 
 const Receipt = () => {
   const initialTableData = [
-    { attribute: 'Blood Group', value: '' },
+    // { attribute: 'Blood Group', value: '' },
     { attribute: 'Height', value: '' },
     { attribute: 'Weight', value: '' },
     { attribute: 'Allergies', value: '' },
     { attribute: 'Symptoms', value: '' },
-    { attribute: 'Diagnosis Report', value: null }, // Initialize value as null for file input
+    // { attribute: 'Diagnosis Report', value: null }, // Initialize value as null for file input
     { attribute: 'Surgery Details', value: '' },
     { attribute: 'Prescription', value: '' },
     // Add more data as needed
@@ -45,7 +46,7 @@ const Receipt = () => {
   };
 
   return (
-    <div>
+    <div> 
       <PatientInfo />
       <table className={`editable-table ${isEditable ? 'editable' : 'readable'}`}>
         <thead>
@@ -88,9 +89,13 @@ const Receipt = () => {
         ) : (
           <button onClick={toggleEditable}>Edit</button>
         )}
+        <Link to='/biometric'>
         <button onClick={handleLogout}>Logout</button>
+        </Link>
+        
       </div>
     </div>
+    
   );
 };
 

@@ -5,14 +5,14 @@ import './receipt.css'; // Import your CSS file
 
 const Patientreceipt = () => {
   const initialTableData = [
-    { attribute: 'Blood Group', value: '' },
-    { attribute: 'Height', value: '' },
-    { attribute: 'Weight', value: '' },
-    { attribute: 'Allergies', value: '' },
-    { attribute: 'Symptoms', value: '' },
-    { attribute: 'Diagnosis Report', value: null }, // Initialize value as null for file input
-    { attribute: 'Surgery Details', value: '' },
-    { attribute: 'Prescription', value: '' },
+    { attribute: 'Blood Group', value: 'A+' },
+    { attribute: 'Height', value: '160' },
+    { attribute: 'Weight', value: '50' },
+    { attribute: 'Allergies', value: 'Dust' },
+    { attribute: 'Symptoms', value: 'Cough and Cold' },
+    // { attribute: 'Diagnosis Report', value:  }, // Initialize value as null for file input
+    { attribute: 'Surgery Details', value: 'NA' },
+    { attribute: 'Prescription', value: 'Paracetamol' },
     // Add more data as needed
   ];
 

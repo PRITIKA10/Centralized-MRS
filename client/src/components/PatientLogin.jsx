@@ -160,11 +160,13 @@
 // export default PatientLogin;
 import React, { useState } from 'react';
 import api from '../api/axiosConfig';
+import axios from 'axios';
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBInput } from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
 function PatientLogin() {
   const [aadharNumber, setAadharNumber] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   // Get the history object from React Router
   const navigate = useNavigate();
@@ -174,7 +176,7 @@ function PatientLogin() {
     // For demonstration purposes, we directly redirect to the OTP verification page
     //navigate('/otpverification');
     try {
-      const response = await api.post('/patient/patient-login', { aadharNumber, phoneNumber });
+      const response = await axios.post('http://localhost:5000/patient/patient-login', { aadharNumber, phoneNumber });
       if (response.data.message === 'OTP sent successfully') {
         navigate('/otpverification');
       } else {
@@ -183,6 +185,7 @@ function PatientLogin() {
     } catch (error) {
       console.error('Error sending OTP:', error);
     }
+    setShowSuccessMessage(true);
     navigate('/otpverification');
     // try {
     //   // Send a POST request to your backend to initiate OTP sending
@@ -205,7 +208,7 @@ function PatientLogin() {
   return (
     <>
   
-    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image'>
+    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image ' style={{ backgroundColor: '#EBFBF7' ,minHeight: '100vh'}}>
       {/* ... (rest of the JSX) */}
       <MDBCard className='m-5' style={{ maxWidth: '600px' }}>
         <MDBCardBody className='px-5'>
@@ -232,6 +235,7 @@ function PatientLogin() {
       <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg' onClick={handleSendOTP}>
         Send OTP
       </MDBBtn>
+      {showSuccessMessage && <p className="text-success">OTP sent successfully</p>}
       </Link>
 
 

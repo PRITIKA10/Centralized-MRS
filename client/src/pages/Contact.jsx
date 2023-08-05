@@ -3,7 +3,7 @@ import './contact.css';
 
 export default function Contact() {
   return (
-    <div>
+    <div className='yo-yo'>
       <section className="contact-page-section">
       <div className="container">
           <div className="sec-title">
@@ -52,9 +52,9 @@ export default function Contact() {
                       <div className="inner-column">
                           <h2>Contact Info</h2>
                             <ul className="list-info">
-                              <li><i className="fas fa-globe"></i>123 lorem ispum Abc, Street Chandigarh.</li>
-                                <li><i className="far fa-envelope"></i>example@test</li>
-                                <li><i className="fas fa-phone"></i>1-234-567-890 <br/> 1-234-567-890</li>
+                              <li><i className="fas fa-globe"></i>Dhankawadi,Pune.</li>
+                                <li><i className="far fa-envelope"></i>prohera@gmail.com</li>
+                                <li><i className="fas fa-phone"></i>9623470701 <br/>8087069750</li>
                             </ul>
                             <ul className="social-icon-four">
                                 <li className="follow">Follow on: </li>

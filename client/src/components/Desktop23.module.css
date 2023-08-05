@@ -1,9 +1,13 @@
 .sponsors {
   color: #f4b63f;
 }
+.desktop23{
+  width: 100vw;
+}
 .platinum{
   width: -moz-fit-content;
-  width: fit-content;
+  /* width: fit-content; */
+  width: 100vw;
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
@@ -13,7 +17,7 @@
 .ourSponsors {
   position: absolute;
   top: 110px;
-  left: 520px;
+  left: 620px;
   font-weight: 600;
 }
 .platinum1Icon {
@@ -22,8 +26,11 @@
   left: 450px;
   width: 373px;
   height: 371px;
+  /* margin: 20px; */
   object-fit: cover;
-  margin: 20px;
+  /* margin:auto; */
+  margin-top: 20px;
+  margin-left: 90px;
   display: flex;
   justify-content: center; /* Align items horizontally */
   align-items: center;
@@ -111,7 +118,7 @@
 .thanksYouToContainer {
   position: absolute;
   top: 186px;
-  left: 329px;
+  left: 390px;
   font-size: 14px;
   font-weight: 500;
   color: #9da1a6;
@@ -124,8 +131,14 @@
   width: 100%;
   height: 903px;
   overflow: hidden;
-  text-align: left;
+  /* text-align: left; */
   font-size: 36px;
   color: #fff;
   font-family: var(--font-poppins);
+  /* margin: auto; */
+}
+.carouselWrapper {
+  width: 100%;
+  max-width: 100%;
+  /* margin-left: 40px; */
 }

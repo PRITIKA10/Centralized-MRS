@@ -70,7 +70,7 @@ function Doclogin() {
   return (
     <>
   
-    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image'>
+    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' style={{ backgroundColor: '#EBFBF7' ,minHeight: '100vh'}}>
       {/* ... (rest of the JSX) */}
       <MDBCard className='m-5' style={{ maxWidth: '600px' }}>
         <MDBCardBody className='px-5'>

@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 function Doclogin() {
   return (
-    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' >
+    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' style={{ backgroundColor: '#EBFBF7' ,minHeight: '100vh'}}>
       <div className='mask gradient-custom-3'></div>
       <MDBCard className='m-5' style={{maxWidth: '600px'}}>
         <MDBCardBody className='px-5'>
@@ -31,6 +31,7 @@ function Doclogin() {
           {/* <MDBInput wrapperClass='mb-4' label='Registration Id' size='lg' id='form1' type='text'/> */}
           <MDBInput wrapperClass='mb-4' label='Patient Aadhar Number' size='lg' id='form1' type='number'/>
           <MDBInput wrapperClass='mb-4' label='Patient Name' size='lg' id='form1' type='text'/>
+          <MDBInput wrapperClass='mb-4' label='Patient Phone Number' size='lg' id='form1' type='text'/>
           {/* <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' id='form2' type='email'/> */}
           {/* <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/> */}
           {/* <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg' id='form4' type='password'/> */}
@@ -38,7 +39,7 @@ function Doclogin() {
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
           </div> */}
           <Link to="/receipt">
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Verify Biometric</MDBBtn>
+          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Send Otp</MDBBtn>
           </Link>
 {/*           
           <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Login</MDBBtn> */}

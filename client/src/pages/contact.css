@@ -11,7 +11,7 @@ li, ul {
   
   .sec-title .title {
     position: relative;
-    color: #00b8ca;
+    color: #47E4C3;
     font-size: 18px;
     font-weight: 700;
     padding-right: 50px;
@@ -52,7 +52,7 @@ li, ul {
   .contact-page-section .inner-container {
     position: relative;
     z-index: 1;
-    background-color: #00b8ca;
+    background-color: #47E4C3;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
   }
   
@@ -139,7 +139,7 @@ li, ul {
   .contact-form input[type="text"]:focus,
   .contact-form input[type="email"]:focus,
   .contact-form textarea:focus {
-    border-color: #00b8ca;
+    border-color: #47E4C3;
   }
   
   .contact-form textarea {
@@ -153,9 +153,9 @@ li, ul {
     margin-top: 10px;
     text-transform: capitalize;
     padding: 16px 39px;
-    border: 2px solid #00b8ca;
+    border: 2px solid #47E4C3;
     font-family: Arimo, sans-serif;
-    background: #00b8ca;
+    background: #47E4C3;
     display: inline-block;
     position: relative;
     line-height: 24px;
@@ -164,8 +164,8 @@ li, ul {
   }
   
   .contact-form .theme-btn:hover {
-    color: #00b8ca;
-    border-color: #00b8ca;
+    color: #47E4C3;
+    border-color: #47E4C3;
     background: 0 0;
   }
   
@@ -214,4 +214,6 @@ li, ul {
   .social-icon-four li a:hover {
     color: #222;
   }
-  
+  .yo-yo{
+    background-color: #EBFBF7;
+  }

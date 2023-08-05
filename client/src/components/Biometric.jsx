@@ -19,7 +19,7 @@ function Doclogin() {
       <div className='mask gradient-custom-3'></div>
       <MDBCard className='m-5' style={{maxWidth: '600px'}}>
         <MDBCardBody className='px-5'>
-          <h2 className="text-uppercase text-center mb-5">Patient Biometric</h2>
+          <h2 className="text-uppercase text-center mb-5">Patient Verification</h2>
           {/* <MDBDropdown>
             <MDBDropdownToggle size="lg" className='test'>Dropdown button</MDBDropdownToggle>
              <MDBDropdownMenu>
@@ -38,7 +38,7 @@ function Doclogin() {
           {/* <div className='d-flex flex-row justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
           </div> */}
-          <Link to="/receipt">
+          <Link to="/patientotp">
           <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Send Otp</MDBBtn>
           </Link>
 {/*           

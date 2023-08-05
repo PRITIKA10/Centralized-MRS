@@ -18,6 +18,7 @@ import Biometric from './components/Biometric';
 import DocOtp from './components/DocOtp';
 import OtpVerification from './components/OtpVerification';
 import Patientreceipt from './components/Patientreceipt';
+import PatientOtp from './components/Patientotp'
 
 
 function App() {
@@ -69,7 +70,7 @@ function App() {
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/patient' element={<PatientLogin />} />
             <Route exact path='/doctor' element={<Doclogin />} />
-            
+            <Route exact path='/patientotp' element={<PatientOtp />} />
             <Route exact path='/receipt' element={<Receipt/>}/>
             <Route exact path='/biometric' element={<Biometric/>}/>
             <Route exact path='/otpverification' element={<OtpVerification/>}/>

@@ -17,4 +17,4 @@ This way, we can ensure that both the parties are verified and consent has been 
 
 # API's Used in the project
 1. Postman
-2. 
+2. Twilio SMS API

@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBInput,MDBContainer } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
-// import '@passageidentity/passage-elements/passage-auth'
 
-// const PASSAGE_API_ID='X5IxXHz06oazefYtr2C5U1gf';
 
 function DocOtp() {
   const [otpReceived, setOtpReceived] = useState('');
 
   const handleVerifyOTP = () => {
-    // Here, you would verify the entered OTP with the received OTP from the user's phone
-    // For this example, we'll assume the entered OTP matches the one sent
+    
     console.log('OTP Verified! Redirect to next page...');
-    // You can add the necessary code to navigate to the next page after OTP verification
+    
   };
 
   return (
@@ -37,7 +34,7 @@ function DocOtp() {
         </MDBCardBody>
       </MDBCard> 
        
-      {/* <passage-auth app-id={PASSAGE_API_ID}></passage-auth> */}
+      
       
       
     </MDBContainer>

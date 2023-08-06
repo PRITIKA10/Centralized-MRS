@@ -16,9 +16,9 @@ const PatientForm = () => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
-  const [isEditable, setIsEditable] = useState(true); // Initial state is editable
+  const [isEditable, setIsEditable] = useState(true); 
 
-  // Helper function to update the value in the formData state
+  
   const updateFormField = (field, value) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -26,18 +26,18 @@ const PatientForm = () => {
     }));
   };
 
-  // Function to toggle between editable and readable formats
+  
   const toggleEditable = () => {
     setIsEditable((prevIsEditable) => !prevIsEditable);
   };
 
-  // Function to handle saving the changes (for demonstration purposes, it just logs the data)
+  
   const handleSave = async (e) => {
     e.preventDefault();
     try {
       await axios.post("/receipt", formData);
       alert("Data saved successfully!");
-      setIsEditable(false); // Make the text boxes read-only after saving
+      setIsEditable(false); 
     } catch (error) {
       console.error("Error saving data:", error);
       alert("Error saving data!");

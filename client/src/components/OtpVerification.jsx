@@ -11,17 +11,16 @@ function OtpVerification() {
         const response = await axios.post('/patient/patient-login/verify-otp', { otp: otpReceived });
         if (response.data.message === 'OTP verification successful') {
           console.log('OTP Verified! Redirect to next page...');
-          // Redirect or navigate to the next page here
+          
         } else {
           console.error('Invalid OTP');
         }
       } catch (error) {
         console.error('Error verifying OTP:', error);
     }
-    // Here, you would verify the entered OTP with the received OTP from the user's phone
-    // For this example, we'll assume the entered OTP matches the one sent
+    
     console.log('OTP Verified! Redirect to next page...');
-    // You can add the necessary code to navigate to the next page after OTP verification
+    
   };
 
   return (

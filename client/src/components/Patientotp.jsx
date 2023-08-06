@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBInput,MDBContainer } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
-// import '@passageidentity/passage-elements/passage-auth'
-
-// const PASSAGE_API_ID='X5IxXHz06oazefYtr2C5U1gf';
 
 function PatientOtp() {
   const [otpReceived, setOtpReceived] = useState('');
 
-  const handleVerifyOTP = () => {
-    // Here, you would verify the entered OTP with the received OTP from the user's phone
-    // For this example, we'll assume the entered OTP matches the one sent
+  const handleVerifyOTP = async() => {
+    try {
+      const response = await axios.post('/patient/patient-login/verify-otp', { otp: otpReceived });
+      if (response.data.message === 'OTP verification successful') {
+        console.log('OTP Verified! Redirect to next page...');
+        
+      } else {
+        console.error('Invalid OTP');
+      }
+    } catch (error) {
+      console.error('Error verifying OTP:', error);
+  }
+  
+  console.log('OTP Verified! Redirect to next page...');
     console.log('OTP Verified! Redirect to next page...');
-    // You can add the necessary code to navigate to the next page after OTP verification
+    
   };
 
   return (
@@ -37,7 +45,7 @@ function PatientOtp() {
         </MDBCardBody>
       </MDBCard> 
        
-      {/* <passage-auth app-id={PASSAGE_API_ID}></passage-auth> */}
+     
       
       
     </MDBContainer>

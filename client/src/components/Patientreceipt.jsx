@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PatientInfo from './PatientInfo';
 import { Link } from 'react-router-dom';
-import './receipt.css'; // Import your CSS file
+import './receipt.css'; 
 
 const Patientreceipt = () => {
   const initialTableData = [
@@ -10,28 +10,21 @@ const Patientreceipt = () => {
     { attribute: 'Weight', value: '50' },
     { attribute: 'Allergies', value: 'Dust' },
     { attribute: 'Symptoms', value: 'Cough and Cold' },
-    // { attribute: 'Diagnosis Report', value:  }, // Initialize value as null for file input
+    
     { attribute: 'Surgery Details', value: 'NA' },
     { attribute: 'Prescription', value: 'Paracetamol' },
-    // Add more data as needed
+    
   ];
 
   const [tableData, setTableData] = useState(initialTableData);
-  const [isEditable, setIsEditable] = useState(false); // Always set to false for readable format
+  const [isEditable, setIsEditable] = useState(false); 
 
-  // Helper function to update the value in the tableData state
-//   const updateCellValue = (index, value) => {
-//     setTableData((prevTableData) => {
-//       const updatedTableData = [...prevTableData];
-//       updatedTableData[index].value = value;
-//       return updatedTableData;
-//     });
-//   };
+ 
 
 const appendCellValue = (value) => {
     setTableData((prevTableData) => {
       const updatedTableData = [...prevTableData];
-      updatedTableData.push({ value }); // Append a new cell with the provided value
+      updatedTableData.push({ value }); 
       return updatedTableData;
     });
   };

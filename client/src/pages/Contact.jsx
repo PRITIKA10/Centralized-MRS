@@ -13,11 +13,11 @@ export default function Contact() {
             <div className="inner-container">
               <div className="row clearfix">
                 
-                  {/* <!--Form Column--> */}
+                  
                     <div className="form-column col-md-8 col-sm-12 col-xs-12">
                       <div className="inner-column">
                           
-                            {/* <!--Contact Form--> */}
+                            
                             <div className="contact-form">
                                 <form method="post" action="sendemail.php" id="contact-form">
                                     <div className="row clearfix">
@@ -42,12 +42,11 @@ export default function Contact() {
                                     </div>
                                 </form>
                             </div>
-                            {/* <!--End Contact Form-->
-                             */}
+                            
                         </div>
                     </div>
                     
-                    {/* <!--Info Column--> */}
+                    
                     <div className="info-column col-md-4 col-sm-12 col-xs-12">
                       <div className="inner-column">
                           <h2>Contact Info</h2>

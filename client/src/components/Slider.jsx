@@ -6,7 +6,7 @@ import {
 
 export default function Slider() {
   return (
-    // <div className='slider'>
+   
       <MDBCarousel showControls>
       <MDBCarouselItem
         className='w-100 d-block'
@@ -34,7 +34,7 @@ export default function Slider() {
       />
     </MDBCarousel>
 
-    // </div>
+    
     
   );
 }

@@ -23,19 +23,14 @@ export default function Navbar() {
           <Link className="nav-link" to="/contact">Contact Us</Link>
         </li>
         
-        {/* <li className="nav-item">
-          <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> */}
+        
       </ul>
       <form className="d-flex">
-        {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
+        
         <Link to="/login">
         <button className="custom-button" type="submit">Login</button>
         </Link>
-        {/* <Link to="/signup">
-        <button className="custom-button" type="submit">Sign Up</button>
-        </Link> */}
-        
+       
       </form>
     </div>
   </div>
